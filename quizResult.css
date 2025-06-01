@@ -8,6 +8,7 @@ body{
 .resultsTop{
    text-align: center;
 }
+ 
 .artist {
     border: 1px solid #ccc;
     margin: 10px 0;
@@ -28,8 +29,4 @@ body{
   .artist li {
     margin-bottom: 5px;
     color: #555;
-  }
-
-  .mainGenre{
-
   }

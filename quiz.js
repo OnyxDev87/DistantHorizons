@@ -9,8 +9,8 @@ var scores = [
   { genre: "R&B", score: 0 },
   { genre: "Metal", score: 0 },
   { genre: "Indie/Folk", score: 0 },
-  { genre: "Jazz", score: 0 } 
-]
+  { genre: "Jazz", score: 0 }
+];
 
 const artists = [
   // Alternative Rock
@@ -266,7 +266,6 @@ function addToPersonalList() {
     });
   }
 }
-//Appends artists name, genre, and songs into personalList
 
 function removeFromPersonalList(artistName) {
   personalList = personalList.filter(artist => artist.name !== artistName);
@@ -298,44 +297,10 @@ function cullPersonalList(answers) {
 }
 
 function results(answers) {
-  const scores = cullPersonalList(answers);
-  const topGenres = scores.sort((a, b) => b.score - a.score).slice(0, 4);
+  const genreScores = cullPersonalList(answers);
+  const topGenres = genreScores.sort((a, b) => b.score - a.score).slice(0, 4);
   localStorage.setItem("topGenres", JSON.stringify(topGenres));
   window.location.href = "quizResult.html";
-}
-
-let topGenre = scores[0];
-
-for (let i = 1; i < scores.length; i++) {
-  if (scores[i].score > topGenre.score) {
-    topGenre = scores[i];
-  }
-}
-//After submitt button, function sorts through genre with highest value
- 
-document.getElementById("mainGenre").textContent =
-      `Top Genre: ${topGenre.genre}`;
-
-function displayArtists(artists) {
-  const resultsDiv = document.getElementById("results");
-  resultsDiv.innerHTML = "";
-
-  let artistList = artists;
-  if (typeof artists === "string") {
-    try {
-      artistList = JSON.parse(artists);
-    } catch (e) {
-      artistList = [];
-    }
-  }
-
-  for (let i = 0; i < 4; i++) {
-    const artist = artistList[i];
-    const artistDiv = document.createElement("div");
-    artistDiv.className = "artist";
-    artistDiv.innerHTML = `<h3>${artist.name} (${artist.genre})</h3><ul>${artist.songs.map(song => `<li>${song}</li>`).join("")}</ul>`;
-    resultsDiv.appendChild(artistDiv);
-  }
 }
 
 function submitQuiz(event) {
@@ -346,90 +311,15 @@ function submitQuiz(event) {
   results(answers);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-  const form = document.getElementById("musicQuiz");
-  if (form) {
-    form.addEventListener("submit", submitQuiz);
-  }
-});
-
 function resetQuiz() {
   const form = document.getElementById("musicQuiz");
   form.reset();
   document.getElementById("results").innerHTML = "";
 }
 
-function doTheThing() {
-  addToPersonalList();
-
-  const topGenresJSON = localStorage.getItem('topGenres');
-  if (!topGenresJSON) return;
-
-  let topGenres;
-  try {
-    topGenres = JSON.parse(topGenresJSON);
-  } catch (e) {
-    console.error("Failed to parse topGenres:", e);
-    return;
-  }
-
-  const topGenreNames = topGenres.map(g => g.genre);
-
-  const topArtists = personalList.filter(artist => topGenreNames.includes(artist.genre));
-
-  displayArtists(topArtists);
-  localStorage.removeItem('topGenres');
-}
-
-
 document.addEventListener("DOMContentLoaded", function() {
-  const imagePaths = [
-    "images/note1.png",
-    "images/note2.png",
-    "images/note3.png",
-    "images/note1.png",
-    "images/note2.png",
-    "images/note3.png",
-    "images/note1.png",
-    "images/note2.png",
-    "images/note3.png",
-    "images/note1.png",
-    "images/note2.png",
-    "images/note3.png"
-  ];
-
-  const container = document.getElementById("image-container");
-  const usedPositions = [];
-  const MIN_DISTANCE = 150; // in pixels
-
-  function isTooClose(x, y) {
-    return usedPositions.some(pos => {
-      const dx = pos.x - x;
-      const dy = pos.y - y;
-      return Math.sqrt(dx * dx + dy * dy) < MIN_DISTANCE;
-    });
+  const form = document.getElementById("musicQuiz");
+  if (form) {
+    form.addEventListener("submit", submitQuiz);
   }
-
-  imagePaths.forEach(src => {
-    const img = document.createElement("img");
-    img.src = src;
-    img.className = "floating-image";
-    img.style.scale = Math.random() * 0.7;
-
-    let x, y;
-    let attempts = 0;
-
-    do {
-      x = Math.random() * (container.clientWidth - 100);
-      y = Math.random() * (container.clientHeight - 100);
-      attempts++;
-    } while (isTooClose(x, y) && attempts < 50);
-
-    usedPositions.push({ x, y });
-
-    img.style.left = `${x}px`;
-    img.style.top = `${y}px`;
-
-    container.appendChild(img);
-  });
 });
