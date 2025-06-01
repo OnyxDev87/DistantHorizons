@@ -33,7 +33,10 @@ body {
 .top3{
   font-family: "Space Mono", monospace;
   font-weight: 700;
+  font-size: 1.1rem;
   font-style: normal;
+  align-self: center;
+  text-align: center;
 }
 
 /* ========== Container for the four artist boxes ========== */
