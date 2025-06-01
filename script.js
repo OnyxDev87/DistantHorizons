@@ -1,5 +1,17 @@
 var personalList = [];
 
+var scores = [
+  { genre: "Alternative Rock", score: 0 },
+  { genre: "Hip-Hop", score: 0 },
+  { genre: "Electronic", score: 0 },
+  { genre: "Pop", score: 0 },
+  { genre: "Classic Rock", score: 0 },
+  { genre: "R&B", score: 0 },
+  { genre: "Metal", score: 0 },
+  { genre: "Indie/Folk", score: 0 },
+  { genre: "Jazz", score: 0 } 
+]
+
 const artists = [
   // Alternative Rock
   {
@@ -193,27 +205,27 @@ const artists = [
   // Indie / Folk
   {
     name: "Bon Iver",
-    genre: "Indie Folk",
+    genre: "Indie/Folk",
     songs: ["Skinny Love", "Holocene", "Blood Bank"]
   },
   {
     name: "Mumford & Sons",
-    genre: "Indie Folk",
+    genre: "Indie/Folk",
     songs: ["I Will Wait", "The Cave", "Little Lion Man"]
   },
   {
     name: "Vampire Weekend",
-    genre: "Indie",
+    genre: "Indie/Folk",
     songs: ["A-Punk", "Harmony Hall", "Cousins"]
   },
   {
     name: "Florence + The Machine",
-    genre: "Indie",
+    genre: "Indie/Folk",
     songs: ["Dog Days Are Over", "Shake It Out", "Hunger"]
   },
   {
     name: "The National",
-    genre: "Indie",
+    genre: "Indie/Folk",
     songs: ["I Need My Girl", "Bloodbuzz Ohio", "About Today"]
   },
 
@@ -254,6 +266,7 @@ function addToPersonalList() {
     });
   }
 }
+//Appends artists name, genre, and songs into personalList
 
 function removeFromPersonalList(artistName) {
   personalList = personalList.filter(artist => artist.name !== artistName);
@@ -262,11 +275,150 @@ function removeFromPersonalList(artistName) {
 function getAnswer() {
   const form = document.getElementById("musicQuiz");
   const formData = new FormData(form);
-  const answers = {};
-  formData.forEach((value, key) => {
-    answers[key] = value;
+  const answers = [];
+
+  formData.forEach((value) => {
+    answers.push(String(value));
   });
+
   return answers;
 }
 
-console.log(getAnswer());
+function cullPersonalList(answers) {
+  scores.forEach(g => g.score = 0);
+
+  for (let i = 0; i < personalList.length; i++) {
+    const artist = personalList[i];
+    if (answers.includes(artist.genre)) {
+      const genre = scores.find(g => g.genre === artist.genre);
+      if (genre) genre.score++;
+    }
+  }
+  return scores;
+}
+
+let mGenre = scores[0];
+
+for (let i = 1; i < scores.length; i++) {
+  if (scores[i].score > topGenre.score) {
+    topGenre = scores[i];
+  }
+}
+
+function results(answers) {
+  const scores = cullPersonalList(answers);
+  const topGenres = scores.sort((a, b) => b.score - a.score).slice(0, 4);
+  localStorage.setItem("topGenres", JSON.stringify(topGenres));
+  window.location.href = "quizResult.html";
+}
+
+
+function displayArtists(artists) {
+  const resultsDiv = document.getElementById("results");
+  resultsDiv.innerHTML = "";
+
+  let artistList = artists;
+  if (typeof artists === "string") {
+    try {
+      artistList = JSON.parse(artists);
+    } catch (e) {
+      artistList = [];
+    }
+  }
+
+  for (let i = 0; i < 4; i++) {
+    const artist = artistList[i];
+    const artistDiv = document.createElement("div");
+    artistDiv.className = "artist";
+    artistDiv.innerHTML = `<h3>${artist.name} (${artist.genre})</h3><ul>${artist.songs.map(song => `<li>${song}</li>`).join("")}</ul>`;
+    resultsDiv.appendChild(artistDiv);
+  }
+}
+
+function submitQuiz(event) {
+  if (event) event.preventDefault();
+  personalList = [];
+  addToPersonalList();
+  const answers = getAnswer();
+  results(answers);
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("musicQuiz");
+  if (form) {
+    form.addEventListener("submit", submitQuiz);
+  }
+});
+
+function resetQuiz() {
+  const form = document.getElementById("musicQuiz");
+  form.reset();
+  document.getElementById("results").innerHTML = "";
+}
+
+function doTheThing() {
+  addToPersonalList();
+
+  const topGenresJSON = localStorage.getItem('topGenres');
+  if (!topGenresJSON) return;
+
+  let topGenres;
+  try {
+    topGenres = JSON.parse(topGenresJSON);
+  } catch (e) {
+    console.error("Failed to parse topGenres:", e);
+    return;
+  }
+
+  const topGenreNames = topGenres.map(g => g.genre);
+
+  const topArtists = personalList.filter(artist => topGenreNames.includes(artist.genre));
+
+  displayArtists(topArtists);
+  localStorage.removeItem('topGenres');
+}
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const imagePaths = [
+    "images/note1.png",
+    "images/note2.png",
+    "images/note3.png"
+  ];
+
+  const container = document.getElementById("image-container");
+  const usedPositions = [];
+  const MIN_DISTANCE = 100; // in pixels
+
+  function isTooClose(x, y) {
+    return usedPositions.some(pos => {
+      const dx = pos.x - x;
+      const dy = pos.y - y;
+      return Math.sqrt(dx * dx + dy * dy) < MIN_DISTANCE;
+    });
+  }
+
+  imagePaths.forEach(src => {
+    const img = document.createElement("img");
+    img.src = src;
+    img.className = "floating-image";
+
+    let x, y;
+    let attempts = 0;
+
+    // Try 50 times to find a non-clumped position
+    do {
+      x = Math.random() * (window.innerWidth - 100); // subtract image width
+      y = Math.random() * (window.innerHeight - 100);
+      attempts++;
+    } while (isTooClose(x, y) && attempts < 50);
+
+    usedPositions.push({ x, y });
+
+    img.style.left = `${x}px`;
+    img.style.top = `${y}px`;
+
+    container.appendChild(img);
+  });
+});
+

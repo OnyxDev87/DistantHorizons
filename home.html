@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Expand Your Musical Horizons!</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="script.js"></script>
+    <link href="home.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <div class="home">
@@ -14,14 +13,14 @@
         <h1>Looking for something new?</h1>
         <p>Take this quiz to find new music</p>
       </div>
-
-      <div class="homeButtons">
-        <button>
-          <p>Browse</p>
-        </button>
-        <button onclick="location.href='quiz.html'">Quiz</button>
+      <div style="text-align: center;" class="homeButtons">
+        <button class="button" onclick="location.href='quiz.html'">Quiz</button>
+        <br></br>
         <button>Browse</button>
       </div>
     </div>
+
+    <div id="image-container"></div>
+    <script src="script.js"></script>
   </body>
 </html>

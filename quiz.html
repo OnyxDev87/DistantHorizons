@@ -11,7 +11,6 @@
 <h1>🎧 Music Discovery Quiz</h1>
 
 <form id="musicQuiz">
-
   <div class="question">
     <h2>1. What's your ideal music mood?</h2>
     <div class="options">
@@ -49,7 +48,7 @@
     Driving or commuting
   </label>
   <label class="option-box">
-    <input type="radio" name="q2" value="Indie">
+    <input type="radio" name="q2" value="Indie/Folk">
     Thinking or daydreaming
   </label>
 </div>
@@ -87,7 +86,7 @@
     Power and ambition
   </label>
   <label class="option-box">
-    <input type="radio" name="q4" value="Indie Folk">
+    <input type="radio" name="q4" value="Indie/Folk">
     Nature and personal growth
   </label>
   <label class="option-box">
@@ -95,8 +94,133 @@
     Rebellion and intensity
   </label>
 </div>
-<br></div>
+<br></br>
 
+<h2>5. How do you want music to make you feel?</h2>
+<div class="options">
+  <label class="option-box">
+    <input type="radio" name="q5" value="Pop">
+    Uplifted
+  </label>
+  <label class="option-box">
+    <input type="radio" name="q5" value="R&B">
+    Comforted
+  </label>
+  <label class="option-box">
+    <input type="radio" name="q5" value="Alternative Rock">
+    Emotionally stirred
+  </label>
+  <label class="option-box">
+    <input type="radio" name="q5" value="Jazz">
+    Inspired
+  </label>
+</div>
+<br></br>
+
+<h2>6. What kind of voice do you prefer?</h2>
+<div class="options">
+  <label class="option-box">
+    <input type="radio" name="q6" value="Jazz">
+    Smooth and expressive
+  </label>
+  <label class="option-box">
+    <input type="radio" name="q6" value="Metal">
+    Gritty and powerful
+  </label>
+  <label class="option-box">
+    <input type="radio" name="q6" value="Pop">
+    Clean and catchy
+  </label>
+  <label class="option-box">
+    <input type="radio" name="q6" value="Indie/Folk">
+    Unique and raw
+  </label>
+</div>
+<br></br>
+
+<h2>7. Which artist are you more curious to explore?</h2>
+<div class="options">
+  <label class="option-box">
+    <input type="radio" name="q7" value="R&B">
+    The Weeknd
+  </label>
+  <label class="option-box">
+    <input type="radio" name="q7" value="Classic Rock">
+    Queen
+  </label>
+  <label class="option-box">
+    <input type="radio" name="q7" value="Electronic">
+    Avicii
+  </label>
+  <label class="option-box">
+    <input type="radio" name="q7" value="Hip-Hop">
+    J. Cole
+  </label>
+</div>
+<br></br>
+
+<h2>8. Which of these songs sounds most appealing by title?</h2>
+<div class="options">
+  <label class="option-box">
+    <input type="radio" name="q8" value="Alternative Rock">
+    "Karma Police"
+  </label>
+  <label class="option-box">
+    <input type="radio" name="q8" value="Pop">
+    "Shake It Off"
+  </label>
+  <label class="option-box">
+    <input type="radio" name="q8" value="Metal">
+    "Master of Puppets"
+  </label>
+  <label class="option-box">
+    <input type="radio" name="q8" value="Indie/Folk">
+    "Skinny Love"
+  </label>
+</div>
+<br></br>
+
+<h2>9. Which setting best matches your music vibe?</h2>
+<div class="options">
+  <label class="option-box">
+    <input type="radio" name="q9" value="Jazz">
+    Jazz club or cafe
+  </label>
+  <label class="option-box">
+    <input type="radio" name="q9" value="Electronic">
+    Festival or club
+  </label>
+  <label class="option-box">
+    <input type="radio" name="q9" value="Indie/Folk">
+    Nature walk or road trip
+  </label>
+  <label class="option-box">
+    <input type="radio" name="q9" value="Hip-Hop">
+    Street scene or house party
+  </label>
+</div>
+<br></br>
+
+<h2>10. What's your favorite music decade?</h2>
+<div class="options">
+  <label class="option-box">
+    <input type="radio" name="q10" value="Classic Rock">
+    60s–70s
+  </label>
+  <label class="option-box">
+    <input type="radio" name="q10" value="Pop">
+    2000s–Present
+  </label>
+  <label class="option-box">
+    <input type="radio" name="q10" value="Alternative Rock">
+    90s–2000s
+  </label>
+  <label class="option-box">
+    <input type="radio" name="q10" value="Electronic">
+    2010s–2020s
+  </label>
+</div>
+<br></br>
 </div>
 
 </div>
@@ -106,9 +230,11 @@
   </div>
 
   <div style="text-align: center;">
-    <button type="submit" onclick="getAnswer()">Submit</button>
-  </div>
+    <button type="submit" onclick="location.hrf='quizResult.html'">Submit</button>
+</div>
 </form>
+
+<div id="results" class="result"></div>
 <script src="script.js"></script>
 </body>
 </html>
