@@ -11,19 +11,19 @@ const artists = [
     name: "Arctic Monkeys",
     genre: "Alternative Rock",
     songs: ["Do I Wanna Know?", "R U Mine?", "505"],
-    image: "images/arcticmonkeys1.png"
+    image: "images/monkey.jfif"
   },
   {
     name: "The Strokes",
     genre: "Alternative Rock",
     songs: ["Last Nite", "Someday", "Reptilia"],
-    image: "images/thestrokes1.png"
+    image: "images/strokes.jfif"
   },
   {
     name: "Muse",
     genre: "Alternative Rock",
     songs: ["Supermassive Black Hole", "Uprising", "Starlight"],
-    image: "images/"
+    image: "images/muse.jfif"
   },
   {
     name: "Foo Fighters",
