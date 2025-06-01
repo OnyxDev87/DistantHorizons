@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+font-family: "Space Mono", monospace;
+padding: 2rem;
+max-width: 800px;
+margin: auto;
+background: #f4f4f4;
+}
+
+h1 {
+text-align: center;
+}
+
+.question h2 {
+font-size: 1.2rem;
+margin-bottom: 1rem;
+}
+
+.options {
+display: grid;
+gap: 10px;
+}
+
+.option-box {
+display: block;
+background-color: #e0e0e0;
+padding: 0.75rem 1rem;
+border-radius: 6px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+border: 2px solid transparent;
+}
+
+.option-box:hover {
+background-color: #ccc;
+}
+
+.option-box input {
+display: none;
+}
+
+button {
+font-family: "Space Mono", monospace;
+padding: 0.75rem 1.5rem;
+font-size: 1rem;
+background-color: #4CAF50;
+color: white;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+button:hover {
+background-color: #45a049;
+}
+
+.option-box:has(input[type="radio"]:checked) {
+  background-color: #333;
+  color: white;
+  border-color: #666;
+}

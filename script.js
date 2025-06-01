@@ -245,6 +245,28 @@ const artists = [
   }
 ];
 
-function addToPersonalList(artist) {
-  for (let i = 0; i < personalList.length;
+function addToPersonalList() {
+  for (let i = 0; i < artists.length; i++) {
+    personalList.push({
+      name: artists[i].name,
+      genre: artists[i].genre,
+      songs: artists[i].songs
+    });
+  }
 }
+
+function removeFromPersonalList(artistName) {
+  personalList = personalList.filter(artist => artist.name !== artistName);
+}
+
+function getAnswer() {
+  const form = document.getElementById("musicQuiz");
+  const formData = new FormData(form);
+  const answers = {};
+  formData.forEach((value, key) => {
+    answers[key] = value;
+  });
+  return answers;
+}
+
+console.log(getAnswer());
