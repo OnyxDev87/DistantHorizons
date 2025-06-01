@@ -29,7 +29,7 @@ const artists = [
     name: "Foo Fighters",
     genre: "Alternative Rock",
     songs: ["Everlong", "The Pretender", "Best of You"],
-    image: "images/"
+    image: "images/foo.jfif"
   },
 
   // Hip-Hop / Rap
@@ -37,19 +37,19 @@ const artists = [
     name: "Kendrick Lamar",
     genre: "Hip-Hop",
     songs: ["HUMBLE.", "Alright", "DNA."],
-    image: "images/"
+    image: "images/lamar.jfif"
   },
   {
     name: "J. Cole",
     genre: "Hip-Hop",
     songs: ["No Role Modelz", "Wet Dreamz", "Middle Child"],
-    image: "images/"
+    image: "images/cole.jfif"
   },
   {
     name: "Drake",
     genre: "Hip-Hop",
     songs: ["God's Plan", "In My Feelings", "Hotline Bling"],
-    image: "images/"
+    image: "images/drake.jfif"
   },
   {
     name: "Cardi B",
@@ -61,7 +61,7 @@ const artists = [
     name: "Nicki Minaj",
     genre: "Hip-Hop",
     songs: ["Super Bass", "Anaconda", "Starships"],
-    image: "images/"
+    image: "images/cardi.jfif"
   },
 
   // Electronic / EDM
@@ -69,7 +69,7 @@ const artists = [
     name: "Daft Punk",
     genre: "Electronic",
     songs: ["One More Time", "Around The World", "Get Lucky"],
-    image: "images/"
+    image: "images/daft.jfif"
   },
   {
     name: "Calvin Harris",
@@ -101,13 +101,13 @@ const artists = [
     name: "Taylor Swift",
     genre: "Pop",
     songs: ["All Too Well", "Shake It Off", "Love Story"],
-    image: "images/"
+    image: "images/taylor.jpg"
   },
   {
     name: "Billie Eilish",
     genre: "Pop",
     songs: ["Bad Guy", "When The Party's Over", "Everything I Wanted"],
-    image: "images/"
+    image: "images/download.jpg"
   },
   {
     name: "Ariana Grande",
