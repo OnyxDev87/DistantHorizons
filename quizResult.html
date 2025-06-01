@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <html lang="en">
 <head>
@@ -9,17 +9,69 @@
   <link href="quizResult.css" rel="stylesheet" type="text/css" />
 
 </head>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+    body {
+      font-family: "Space Mono", monospace;
+      font-weight: 400;
+      font-style: normal;
+    }
+    </style>
+    
 <body onload="doTheThing()">
 
-  <div id="results"> </div>
-
+  <p>hihi</p>
   <div class="resultsTop">
     <h1>Your Main Genre</h1>
     <div id="mainGenre"></div>
   </div>
 <br></br>
   <p>Here are some artists and their top 3 songs</p>
+
+  <div id="results"> </div>
   
 <script src="quizResult.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Music Preference Quiz</title>
+  <meta name="viewport" content="width=device-width">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="quizResult.css" rel="stylesheet" type="text/css" />
+  <style>
+    body {
+      font-family: "Space Mono", monospace;
+    }
+    .artist {
+      margin-bottom: 1rem;
+    }
+    .genre-list {
+      margin-top: 2rem;
+    }
+    .genre-item {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="resultsTop">
+    <h1>Your Main Genre</h1>
+    <div id="mainGenre">Loading…</div>
+  </div>
+
+  <p>Here are the artists (and their top 3 songs) for your Main Genre:</p>
+  <div id="results"></div>
+
+  <div class="genre-list">
+    <h2>Next Three Genres</h2>
+    <ul id="otherGenres"></ul>
+  </div>
+
+  <script src="quizResult.js"></script>
 </body>
 </html>
