@@ -43,6 +43,11 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
+button:hover {
+background-color: #b4d1ed;
+}
+
 body {
   font-family: "Space Mono", monospace;
   font-weight: 400;

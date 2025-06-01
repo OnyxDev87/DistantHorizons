@@ -4,302 +4,387 @@ const artists = [
   {
     name: "Radiohead",
     genre: "Alternative Rock",
-    songs: ["Paranoid Android", "Karma Police", "Everything In Its Right Place"]
+    songs: ["Paranoid Android", "Karma Police", "Everything In Its Right Place"],
+    image: "images/radiohead2.png"
   },
   {
     name: "Arctic Monkeys",
     genre: "Alternative Rock",
-    songs: ["Do I Wanna Know?", "R U Mine?", "505"]
+    songs: ["Do I Wanna Know?", "R U Mine?", "505"],
+    image: "images/arcticmonkeys1.png"
   },
   {
     name: "The Strokes",
     genre: "Alternative Rock",
-    songs: ["Last Nite", "Someday", "Reptilia"]
+    songs: ["Last Nite", "Someday", "Reptilia"],
+    image: "images/thestrokes1.png"
   },
   {
     name: "Muse",
     genre: "Alternative Rock",
-    songs: ["Supermassive Black Hole", "Uprising", "Starlight"]
+    songs: ["Supermassive Black Hole", "Uprising", "Starlight"],
+    image: "images/"
   },
   {
     name: "Foo Fighters",
     genre: "Alternative Rock",
-    songs: ["Everlong", "The Pretender", "Best of You"]
+    songs: ["Everlong", "The Pretender", "Best of You"],
+    image: "images/"
   },
 
   // Hip-Hop / Rap
   {
     name: "Kendrick Lamar",
     genre: "Hip-Hop",
-    songs: ["HUMBLE.", "Alright", "DNA."]
+    songs: ["HUMBLE.", "Alright", "DNA."],
+    image: "images/"
   },
   {
     name: "J. Cole",
     genre: "Hip-Hop",
-    songs: ["No Role Modelz", "Wet Dreamz", "Middle Child"]
+    songs: ["No Role Modelz", "Wet Dreamz", "Middle Child"],
+    image: "images/"
   },
   {
     name: "Drake",
     genre: "Hip-Hop",
-    songs: ["God's Plan", "In My Feelings", "Hotline Bling"]
+    songs: ["God's Plan", "In My Feelings", "Hotline Bling"],
+    image: "images/"
   },
   {
     name: "Cardi B",
     genre: "Hip-Hop",
-    songs: ["Bodak Yellow", "I Like It", "WAP"]
+    songs: ["Bodak Yellow", "I Like It", "WAP"],
+    image: "images/"
   },
   {
     name: "Nicki Minaj",
     genre: "Hip-Hop",
-    songs: ["Super Bass", "Anaconda", "Starships"]
+    songs: ["Super Bass", "Anaconda", "Starships"],
+    image: "images/"
   },
 
   // Electronic / EDM
   {
     name: "Daft Punk",
     genre: "Electronic",
-    songs: ["One More Time", "Around The World", "Get Lucky"]
+    songs: ["One More Time", "Around The World", "Get Lucky"],
+    image: "images/"
   },
   {
     name: "Calvin Harris",
     genre: "Electronic",
-    songs: ["Summer", "Feel So Close", "This Is What You Came For"]
+    songs: ["Summer", "Feel So Close", "This Is What You Came For"],
+    image: "images/"
   },
   {
     name: "Deadmau5",
     genre: "Electronic",
-    songs: ["Strobe", "Ghosts 'n' Stuff", "Raise Your Weapon"]
+    songs: ["Strobe", "Ghosts 'n' Stuff", "Raise Your Weapon"],
+    image: "images/"
   },
   {
     name: "Avicii",
     genre: "Electronic",
-    songs: ["Wake Me Up", "Levels", "Hey Brother"]
+    songs: ["Wake Me Up", "Levels", "Hey Brother"],
+    image: "images/"
   },
   {
     name: "Marshmello",
     genre: "Electronic",
-    songs: ["Alone", "Happier", "Friends"]
+    songs: ["Alone", "Happier", "Friends"],
+    image: "images/"
   },
 
   // Pop
   {
     name: "Taylor Swift",
     genre: "Pop",
-    songs: ["All Too Well", "Shake It Off", "Love Story"]
+    songs: ["All Too Well", "Shake It Off", "Love Story"],
+    image: "images/"
   },
   {
     name: "Billie Eilish",
     genre: "Pop",
-    songs: ["Bad Guy", "When The Party's Over", "Everything I Wanted"]
+    songs: ["Bad Guy", "When The Party's Over", "Everything I Wanted"],
+    image: "images/"
   },
   {
     name: "Ariana Grande",
     genre: "Pop",
-    songs: ["7 Rings", "Thank U, Next", "No Tears Left To Cry"]
+    songs: ["7 Rings", "Thank U, Next", "No Tears Left To Cry"],
+    image: "images/"
   },
   {
     name: "Dua Lipa",
     genre: "Pop",
-    songs: ["Don't Start Now", "Levitating", "New Rules"]
+    songs: ["Don't Start Now", "Levitating", "New Rules"],
+    image: "images/"
   },
   {
     name: "Ed Sheeran",
     genre: "Pop",
-    songs: ["Shape of You", "Perfect", "Thinking Out Loud"]
+    songs: ["Shape of You", "Perfect", "Thinking Out Loud"],
+    image: "images/"
   },
 
   // Rock / Classic Rock
   {
     name: "Fleetwood Mac",
     genre: "Classic Rock",
-    songs: ["Go Your Own Way", "Dreams", "The Chain"]
+    songs: ["Go Your Own Way", "Dreams", "The Chain"],
+    image: "images/"
   },
   {
     name: "The Rolling Stones",
     genre: "Classic Rock",
-    songs: ["Paint It Black", "Gimme Shelter", "Sympathy For The Devil"]
+    songs: ["Paint It Black", "Gimme Shelter", "Sympathy For The Devil"],
+    image: "images/"
   },
   {
     name: "Led Zeppelin",
     genre: "Classic Rock",
-    songs: ["Stairway to Heaven", "Whole Lotta Love", "Black Dog"]
+    songs: ["Stairway to Heaven", "Whole Lotta Love", "Black Dog"],
+    image: "https://via.placeholder.com/220"
   },
   {
     name: "Queen",
     genre: "Classic Rock",
-    songs: ["Bohemian Rhapsody", "Don't Stop Me Now", "We Will Rock You"]
+    songs: ["Bohemian Rhapsody", "Don't Stop Me Now", "We Will Rock You"],
+    image: "https://via.placeholder.com/220"
   },
   {
     name: "The Beatles",
     genre: "Classic Rock",
-    songs: ["Hey Jude", "Come Together", "Let It Be"]
+    songs: ["Hey Jude", "Come Together", "Let It Be"],
+    image: "https://via.placeholder.com/220"
   },
 
   // R&B / Soul
   {
     name: "The Weeknd",
     genre: "R&B",
-    songs: ["Blinding Lights", "Save Your Tears", "The Hills"]
+    songs: ["Blinding Lights", "Save Your Tears", "The Hills"],
+    image: "https://via.placeholder.com/220"
   },
   {
     name: "Beyoncé",
     genre: "R&B",
-    songs: ["Crazy In Love", "Formation", "Halo"]
+    songs: ["Crazy In Love", "Formation", "Halo"],
+    image: "https://via.placeholder.com/220"
   },
   {
     name: "Frank Ocean",
     genre: "R&B",
-    songs: ["Thinkin Bout You", "Nights", "Pyramids"]
+    songs: ["Thinkin Bout You", "Nights", "Pyramids"],
+    image: "https://via.placeholder.com/220"
   },
   {
     name: "SZA",
     genre: "R&B",
-    songs: ["Good Days", "The Weekend", "Love Galore"]
+    songs: ["Good Days", "The Weekend", "Love Galore"],
+    image: "https://via.placeholder.com/220"
   },
   {
     name: "Miguel",
     genre: "R&B",
-    songs: ["Adorn", "Sure Thing", "Coffee"]
+    songs: ["Adorn", "Sure Thing", "Coffee"],
+    image: "https://via.placeholder.com/220"
   },
 
   // Metal / Heavy Metal
   {
     name: "Metallica",
     genre: "Metal",
-    songs: ["Enter Sandman", "Master of Puppets", "Nothing Else Matters"]
+    songs: ["Enter Sandman", "Master of Puppets", "Nothing Else Matters"],
+    image: "https://via.placeholder.com/220"
   },
   {
     name: "Iron Maiden",
     genre: "Metal",
-    songs: ["The Trooper", "Run to the Hills", "Fear of the Dark"]
+    songs: ["The Trooper", "Run to the Hills", "Fear of the Dark"],
+    image: "https://via.placeholder.com/220"
   },
   {
     name: "Slipknot",
     genre: "Metal",
-    songs: ["Psychosocial", "Duality", "Before I Forget"]
+    songs: ["Psychosocial", "Duality", "Before I Forget"],
+    image: "https://via.placeholder.com/220"
   },
   {
     name: "System of a Down",
     genre: "Metal",
-    songs: ["Chop Suey!", "Toxicity", "B.Y.O.B."]
+    songs: ["Chop Suey!", "Toxicity", "B.Y.O.B."],
+    image: "https://via.placeholder.com/220"
   },
   {
     name: "Black Sabbath",
     genre: "Metal",
-    songs: ["Paranoid", "Iron Man", "War Pigs"]
+    songs: ["Paranoid", "Iron Man", "War Pigs"],
+    image: "https://via.placeholder.com/220"
   },
 
   // Indie / Folk
   {
     name: "Bon Iver",
     genre: "Indie/Folk",
-    songs: ["Skinny Love", "Holocene", "Blood Bank"]
+    songs: ["Skinny Love", "Holocene", "Blood Bank"],
+    image: "https://via.placeholder.com/220"
   },
   {
     name: "Mumford & Sons",
     genre: "Indie/Folk",
-    songs: ["I Will Wait", "The Cave", "Little Lion Man"]
+    songs: ["I Will Wait", "The Cave", "Little Lion Man"],
+    image: "https://via.placeholder.com/220"
   },
   {
     name: "Vampire Weekend",
     genre: "Indie/Folk",
-    songs: ["A-Punk", "Harmony Hall", "Cousins"]
+    songs: ["A-Punk", "Harmony Hall", "Cousins"],
+    image: "https://via.placeholder.com/220"
   },
   {
     name: "Florence + The Machine",
     genre: "Indie/Folk",
-    songs: ["Dog Days Are Over", "Shake It Out", "Hunger"]
+    songs: ["Dog Days Are Over", "Shake It Out", "Hunger"],
+    image: "https://via.placeholder.com/220"
   },
   {
     name: "The National",
     genre: "Indie/Folk",
-    songs: ["I Need My Girl", "Bloodbuzz Ohio", "About Today"]
+    songs: ["I Need My Girl", "Bloodbuzz Ohio", "About Today"],
+    image: "https://www.google.com/imgres?q=the%20nationa%20artist%20png&imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F6%2F65%2FNatlArtist.png"
   },
 
   // Jazz
   {
     name: "Miles Davis",
     genre: "Jazz",
-    songs: ["So What", "Freddie Freeloader", "Blue in Green"]
+    songs: ["So What", "Freddie Freeloader", "Blue in Green"],
+    image: "https://www.google.com/imgres?q=miles%20davis%20png&imgurl=https%3A%2F%2Fe7.pngegg.com%2Fpngimages%2F572%2F743%2Fpng-clipart-jazz-musician-miles-monk-at-newport-miles-ahead-miles-miscellaneous-microphone.png"
   },
   {
     name: "John Coltrane",
     genre: "Jazz",
-    songs: ["Giant Steps", "A Love Supreme", "Naima"]
+    songs: ["Giant Steps", "A Love Supreme", "Naima"],
+    image: "https://www.google.com/imgres?q=john%20coltrane&imgurl=https%3A%2F%2Fhips.hearstapps.com%2Fhmg-prod%2Fimages%2Fgettyimages-1149694614-copy.jpg"
   },
   {
     name: "Ella Fitzgerald",
     genre: "Jazz",
-    songs: ["Summertime", "Dream a Little Dream of Me", "Cheek to Cheek"]
+    songs: ["Summertime", "Dream a Little Dream of Me", "Cheek to Cheek"],
+    image: "images/ella.jfif"
   },
   {
     name: "Louis Armstrong",
     genre: "Jazz",
-    songs: ["What a Wonderful World", "La Vie En Rose", "Stardust"]
+    songs: ["What a Wonderful World", "La Vie En Rose", "Stardust"],
+    image: "images/arm/jfif"
   },
   {
     name: "Nina Simone",
     genre: "Jazz",
-    songs: ["Feeling Good", "I Put a Spell on You", "Sinnerman"]
+    songs: ["Feeling Good", "I Put a Spell on You", "Sinnerman"],
+    image: "images/ninasimone.jfif"
   }
 ];
 
+// Populate personalList once
 function addAllArtistsToPersonalList() {
-  // Populate personalList once
   for (let i = 0; i < artists.length; i++) {
     personalList.push({
       name: artists[i].name,
       genre: artists[i].genre,
-      songs: artists[i].songs
+      songs: artists[i].songs,
+      image: artists[i].image
     });
   }
 }
 
+// Display up to FOUR artist boxes in a row
 function displayArtistsForGenre(genre) {
   const resultsDiv = document.getElementById("results");
   resultsDiv.innerHTML = "";
 
-  // Filter out only those artists matching the given genre
   const matches = personalList.filter(artist => artist.genre === genre);
+  const topFour = matches.slice(0, 4);
 
-  if (matches.length === 0) {
-    resultsDiv.innerHTML = "<p>No artists found for this genre.</p>";
+  if (topFour.length === 0) {
+    resultsDiv.innerHTML = "<p style='color:#666'>No artists found for this genre.</p>";
     return;
   }
 
-  // For each matching artist, create a div with name + song list
-  matches.forEach(artist => {
+  topFour.forEach(artist => {
     const artistDiv = document.createElement("div");
     artistDiv.className = "artist";
-    artistDiv.innerHTML = `
-      <h3>${artist.name} (${artist.genre})</h3>
+
+    const imgEl = document.createElement("img");
+    imgEl.src = artist.image;
+    imgEl.alt = artist.name;
+
+    const songListDiv = document.createElement("div");
+    songListDiv.className = "song-list";
+    songListDiv.innerHTML = `
+      <h3>${artist.name}</h3>
       <ul>
         ${artist.songs.map(song => `<li>${song}</li>`).join("")}
       </ul>
     `;
+
+    artistDiv.appendChild(imgEl);
+    artistDiv.appendChild(songListDiv);
     resultsDiv.appendChild(artistDiv);
   });
 }
 
-function displayNextThreeGenres(topGenres) {
-  const otherGenresUl = document.getElementById("otherGenres");
-  otherGenresUl.innerHTML = "";
+// Display next three sub-genre boxes with hover listing artists
+function displayNextThreeSubGenres(topGenres) {
+  const otherGenresDiv = document.getElementById("otherGenres");
+  otherGenresDiv.innerHTML = "";
 
-  // Grab up to 3 entries after index 0
   for (let i = 1; i <= 3; i++) {
     if (!topGenres[i]) break;
-    const li = document.createElement("li");
-    li.className = "genre-item";
-    li.textContent = `${i + 1}. ${topGenres[i].genre} (score: ${topGenres[i].score})`;
-    otherGenresUl.appendChild(li);
+    const genreObj = topGenres[i];
+    const genreName = genreObj.genre;
+
+    const box = document.createElement("div");
+    box.className = "genre-box";
+
+    const label = document.createElement("div");
+    label.className = "genre-label";
+    label.textContent = genreName;
+
+    const artistListDiv = document.createElement("div");
+    artistListDiv.className = "artist-list";
+
+    const artistsInThisGenre = personalList
+      .filter(a => a.genre === genreName)
+      .map(a => a.name);
+
+    if (artistsInThisGenre.length === 0) {
+      artistListDiv.innerHTML = `
+        <h3>${genreName}</h3>
+        <p style="font-size:0.9rem; color:#666;">No artists found.</p>
+      `;
+    } else {
+      artistListDiv.innerHTML = `
+        <h3>${genreName}</h3>
+        <ul>
+          ${artistsInThisGenre.map(name => `<li>${name}</li>`).join("")}
+        </ul>
+      `;
+    }
+
+    box.appendChild(label);
+    box.appendChild(artistListDiv);
+    otherGenresDiv.appendChild(box);
   }
 
-  // If fewer than 4 total genres, note accordingly
   if (topGenres.length <= 1) {
-    const li = document.createElement("li");
-    li.className = "genre-item";
-    li.textContent = "No additional genres.";
-    otherGenresUl.appendChild(li);
+    const note = document.createElement("p");
+    note.style.color = "#666";
+    note.textContent = "No additional sub-genres.";
+    otherGenresDiv.appendChild(note);
   }
 }
 
@@ -327,18 +412,11 @@ function doTheThing() {
     return;
   }
 
-  // 1) Set the main genre text (the first entry)
   const mainGenreObj = topGenres[0];
-  document.getElementById("mainGenre").textContent = `Top Genre: ${mainGenreObj.genre}`;
+  document.getElementById("mainGenre").textContent = mainGenreObj.genre;
 
-  // 2) Display all artists for that genre
   displayArtistsForGenre(mainGenreObj.genre);
-
-  // 3) Show the next three genre names + scores
-  displayNextThreeGenres(topGenres);
-
-  // 4) (Optional) remove topGenres if you don't want to persist
-  // localStorage.removeItem("topGenres");
+  displayNextThreeSubGenres(topGenres);
 }
 
 document.addEventListener("DOMContentLoaded", doTheThing);
