@@ -55,35 +55,31 @@ body {
 }
 
 #image-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.5;
 }
 
 .floating-image {
   position: absolute;
   width: 100px;
   height: auto;
-  animation: pulse 3s ease-in-out infinite, rotate 4s ease-in-out infinite alternate;
+  animation: pulseAndRotate 3s ease-in-out infinite;
 }
 
-/* Pulse animation */
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
+@keyframes pulseAndRotate {
+  0% {
+    transform: scale(1) rotate(-5deg);
   }
   50% {
-    transform: scale(1.05);
-  }
-}
-
-/* Rotation animation */
-@keyframes rotate {
-  0% {
-    transform: rotate(-5deg);
+    transform: scale(1.1) rotate(5deg);
   }
   100% {
-    transform: rotate(5deg);
+    transform: scale(1) rotate(-5deg);
   }
 }

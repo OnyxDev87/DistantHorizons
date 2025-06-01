@@ -297,14 +297,6 @@ function cullPersonalList(answers) {
   return scores;
 }
 
-let mGenre = scores[0];
-
-for (let i = 1; i < scores.length; i++) {
-  if (scores[i].score > topGenre.score) {
-    topGenre = scores[i];
-  }
-}
-
 function results(answers) {
   const scores = cullPersonalList(answers);
   const topGenres = scores.sort((a, b) => b.score - a.score).slice(0, 4);
@@ -312,6 +304,14 @@ function results(answers) {
   window.location.href = "quizResult.html";
 }
 
+let topGenre = scores[0];
+
+for (let i = 1; i < scores.length; i++) {
+  if (scores[i].score > topGenre.score) {
+    topGenre = scores[i];
+  }
+  const div = getDocumentById("mainGenre")
+}
 
 function displayArtists(artists) {
   const resultsDiv = document.getElementById("results");
@@ -383,12 +383,21 @@ document.addEventListener("DOMContentLoaded", function() {
   const imagePaths = [
     "images/note1.png",
     "images/note2.png",
+    "images/note3.png",
+    "images/note1.png",
+    "images/note2.png",
+    "images/note3.png",
+    "images/note1.png",
+    "images/note2.png",
+    "images/note3.png",
+    "images/note1.png",
+    "images/note2.png",
     "images/note3.png"
   ];
 
   const container = document.getElementById("image-container");
   const usedPositions = [];
-  const MIN_DISTANCE = 100; // in pixels
+  const MIN_DISTANCE = 150; // in pixels
 
   function isTooClose(x, y) {
     return usedPositions.some(pos => {
@@ -402,14 +411,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const img = document.createElement("img");
     img.src = src;
     img.className = "floating-image";
+    img.style.scale = Math.random() * 0.7;
 
     let x, y;
     let attempts = 0;
 
-    // Try 50 times to find a non-clumped position
     do {
-      x = Math.random() * (window.innerWidth - 100); // subtract image width
-      y = Math.random() * (window.innerHeight - 100);
+      x = Math.random() * (container.clientWidth - 100);
+      y = Math.random() * (container.clientHeight - 100);
       attempts++;
     } while (isTooClose(x, y) && attempts < 50);
 
@@ -421,4 +430,3 @@ document.addEventListener("DOMContentLoaded", function() {
     container.appendChild(img);
   });
 });
-

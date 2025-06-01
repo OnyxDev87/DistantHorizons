@@ -1,4 +1,14 @@
-  .artist {
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body{
+  font-family: "Space Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+.resultsTop{
+   text-align: center;
+}
+.artist {
     border: 1px solid #ccc;
     margin: 10px 0;
     padding: 10px;
@@ -18,4 +28,8 @@
   .artist li {
     margin-bottom: 5px;
     color: #555;
+  }
+
+  .mainGenre{
+
   }
